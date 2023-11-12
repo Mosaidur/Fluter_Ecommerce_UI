@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../widgets/item_appbar.dart';
+import '../widgets/size_of_product.dart';
 
 class ItemPage extends StatelessWidget {
   ItemPage({Key? key, required this.itemData}) : super(key: key);
@@ -13,9 +14,7 @@ class ItemPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
 
-    var Size = [
-      1,2,3,4,5,6,7
-    ] ;
+
     return Scaffold(
       body: ListView(
         children: [
@@ -153,33 +152,7 @@ class ItemPage extends StatelessWidget {
                     ),
                     SizedBox(width: 10,),
 
-                    Row(
-                      children: Size.map((value) =>
-                          Container(
-                        height: 30,
-                        width: 30,
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.symmetric(horizontal: 5),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 2,
-                              blurRadius: 8,
-                            )],
-                        ),
-                        child:Text(
-                          value.toString(),
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.blue,
-                          ),
-                        ),
-                      ),
-                      ).toList(),
-                    ),
+                    SizeOfProduct(),
                   ],
                 ),
               )
