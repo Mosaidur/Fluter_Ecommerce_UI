@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -10,6 +11,11 @@ class ItemPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    var Size = [
+      1,2,3,4,5,6,7
+    ] ;
     return Scaffold(
       body: ListView(
         children: [
@@ -53,7 +59,7 @@ class ItemPage extends StatelessWidget {
                           color: Colors.blue,
                         ),
                         onRatingUpdate: (index){},
-                      initialRating: 5,
+                      initialRating: 4,
                       minRating: 1,
                       direction: Axis.horizontal,
                       itemCount: 5,
@@ -61,9 +67,122 @@ class ItemPage extends StatelessWidget {
                       itemPadding: EdgeInsets.symmetric(horizontal: 4),
 
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 1,
+                                  blurRadius: 10,
+                                ),
+                              ],
+                            ),
+                            child: Icon(
+                              CupertinoIcons.plus,
+                              size: 18,
+                            ),
+                          ),
+
+                          Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            child: Text (
+                              "01",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ),
+
+                          Container(
+                            padding: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 1,
+                                  blurRadius: 10,
+                                ),
+                              ],
+                            ),
+                            child: Icon(
+                              CupertinoIcons.minus,
+                              size: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
+
+              //Brought Description of product
+              Padding(
+                  padding: EdgeInsets.symmetric(vertical: 12),
+                child: Text(
+                    itemData["BigDescription"] ?? "Big Description",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(
+                    fontSize: 17,
+                    color: Colors.indigo
+                  ),
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                child: Row(
+                  children: [
+                    Text(
+                        "Size",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+
+                    Row(
+                      children: Size.map((value) =>
+                          Container(
+                        height: 30,
+                        width: 30,
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.symmetric(horizontal: 5),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 2,
+                              blurRadius: 8,
+                            )],
+                        ),
+                        child:Text(
+                          value.toString(),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                      ).toList(),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ],
