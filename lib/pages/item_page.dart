@@ -131,13 +131,16 @@ class ItemPage extends StatelessWidget {
               //Brought Description of product
               Padding(
                   padding: EdgeInsets.symmetric(vertical: 12),
-                child: Text(
-                    itemData["BigDescription"] ?? "Big Description",
-                  textAlign: TextAlign.justify,
-                  maxLines: 5,
-                  style: TextStyle(
-                    fontSize: 17,
-                    color: Colors.indigo
+                child: Container(
+                  margin: EdgeInsets.only(left: 10, right: 10),
+                  child: Text(
+                      itemData["BigDescription"] ?? "Big Description",
+                    textAlign: TextAlign.justify,
+                    maxLines: 5,
+                    style: TextStyle(
+                      fontSize: 17,
+                      color: Colors.indigo
+                    ),
                   ),
                 ),
               ),
@@ -181,7 +184,9 @@ class ItemPage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: ItemNavBar(price: itemData["Price"].toString() ?? "0",),
+      bottomNavigationBar: ItemNavBar(
+        price: itemData["Price"].toString() ?? "0",
+      ),
     );
   }
 }
