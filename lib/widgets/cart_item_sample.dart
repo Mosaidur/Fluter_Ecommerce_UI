@@ -14,7 +14,7 @@ class CartItemSample extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: Colors.white30,
+            color: Colors.blue.shade50,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(

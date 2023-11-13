@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import '../widgets/color_of_product.dart';
 import '../widgets/item_appbar.dart';
+import '../widgets/item_nav_bar.dart';
 import '../widgets/size_of_product.dart';
 
 class ItemPage extends StatelessWidget {
@@ -14,7 +15,7 @@ class ItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
+    String? Price = itemData["Price"];
 
     return Scaffold(
       body: ListView(
@@ -180,6 +181,7 @@ class ItemPage extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: ItemNavBar(price: itemData["Price"].toString() ?? "0",),
     );
   }
 }
