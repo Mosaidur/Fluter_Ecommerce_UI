@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+import '../widgets/color_of_product.dart';
 import '../widgets/item_appbar.dart';
 import '../widgets/size_of_product.dart';
 
@@ -132,6 +133,7 @@ class ItemPage extends StatelessWidget {
                 child: Text(
                     itemData["BigDescription"] ?? "Big Description",
                   textAlign: TextAlign.justify,
+                  maxLines: 5,
                   style: TextStyle(
                     fontSize: 17,
                     color: Colors.indigo
@@ -155,7 +157,25 @@ class ItemPage extends StatelessWidget {
                     SizeOfProduct(),
                   ],
                 ),
-              )
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 8),
+                child: Row(
+                  children: [
+                    Text(
+                      "Colors:",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+
+                    ColorsOfProduct(),
+                  ],
+                ),
+              ),
             ],
           ),
         ],
