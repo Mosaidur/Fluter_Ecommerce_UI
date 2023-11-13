@@ -103,7 +103,21 @@ class HomePage extends StatelessWidget {
       ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
-        onTap: (index){},
+        onTap: (index) {
+
+          // Handle navigation based on index
+          switch (index) {
+            case 0:
+              Navigator.pushNamed(context, "/");
+              break;
+            case 1:
+              Navigator.pushNamed(context, "cartPage");
+              break;
+            case 2:
+            // Handle the third tab
+              break;
+          }
+        },
         height: 70,
         color: Colors.blue,
         items: [
